@@ -3,8 +3,13 @@ import { StyleSheet, Text, SafeAreaView, Image, View } from 'react-native';
 import tw from 'twrnc';
 import NavOptions from "../components/NavOptions"
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
-// import { GOOGLE_MAPS_KEY } from "@env"
+import { useDispatch } from "react-redux"
+import { setDestination, setOrigin } from "../slices/navSlice"
+
+
 const HomeScreen = () => {
+
+   const dispatch = useDispatch();
   return (
     <SafeAreaView style={styles.safeAreaView}>
     <View style={tw`p-5`}>
@@ -29,14 +34,14 @@ const HomeScreen = () => {
             }
         }}
         enablePoweredByContainer={false}
-        // onPress={(data, details = null) => {
-        //    dispatch(setOrigin({
-        //        location:details.geometry.location,
-        //        description: data.description
-        //    }))
-        //    dispatch(setDestination(null))
-        // // console.log(details)
-        // }}
+        onPress={(data, details = null) => {
+           dispatch(setOrigin({
+               location:details.geometry.location,
+               description: data.description
+           }))
+           dispatch(setDestination(null))
+        // console.log(details)
+        }}
         returnKeyType={"search"}
         query={{
             key: process.env.GOOGLE_MAPS_KEY,
