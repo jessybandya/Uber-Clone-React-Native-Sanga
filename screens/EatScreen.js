@@ -1,15 +1,15 @@
 import React from 'react'
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native'
 
-const MapScreen = () => {
+const EatScreen = () => {
     return (
         <SafeAreaView style={styles.safeAreaView}>
-            <Text>Here is the map</Text>
+            <Text>Here is EatScreen</Text>
         </SafeAreaView>
     )
 }
 
-export default MapScreen
+export default EatScreen
 
 const styles = StyleSheet.create({
     safeAreaView: {
