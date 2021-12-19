@@ -27,6 +27,14 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "ios": {
+      "bundleIdentifier": "com.cnq.eapp",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.cnq.eapp",
+      "versionCode": 1
     }
   }
 }
